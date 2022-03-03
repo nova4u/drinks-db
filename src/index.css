@@ -316,19 +316,32 @@ Cocktail
 .drink img {
   border-radius: var(--mainBorderRadius);
 }
-.drink p {
-  font-weight: bold;
-  text-transform: capitalize;
-  line-height: 1.8;
+div.drink div.drink-info div p {
+  display: inline-flex;
 }
+
+.drink p {
+  text-transform: capitalize;
+  color: #363036;
+  line-height: 1.8;
+  margin-right: 0.4rem;
+}
+p.ingredients {
+  background: rgb(189, 174, 214);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4rem;
+}
+
 .drink span {
-  margin-right: 0.5rem;
 }
 .drink-data {
-  background: var(--primaryLightColor);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--mainBorderRadius);
-  color: var(--primaryColor);
+  font-weight: 600;
+  width: 8rem;
+  padding-right: 1rem;
+  /* padding: 0.25rem 0.5rem; */
+  /* border-radius: var(--mainBorderRadius); */
+  color: var(--mainBlack);
+  border-right: 1px solid #afafaf;
 }
 .drink-info {
   padding-top: 2rem;
@@ -428,4 +441,14 @@ Cocktail
 .scroll-to-top svg {
   margin: auto auto;
   color: white;
+}
+
+/* Single Cocktail */
+div.drink div.drink-info div {
+  margin-top: 1rem;
+  align-items: center;
+}
+
+div.drink div.drink-info div p {
+  margin-bottom: 0px;
 }

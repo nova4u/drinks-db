@@ -74,27 +74,39 @@ const SingleCocktail = () => {
       <div className="drink">
         <img src={image} alt={name}></img>
         <div className="drink-info">
-          <p>
-            <span className="drink-data">name :</span> {name}
-          </p>
-          <p>
-            <span className="drink-data">category :</span> {category}
-          </p>
-          <p>
-            <span className="drink-data">info :</span> {info}
-          </p>
-          <p>
-            <span className="drink-data">glass :</span> {glass}
-          </p>
-          <p>
-            <span className="drink-data">instructons :</span> {instructions}
-          </p>
-          <p>
-            <span className="drink-data">ingredients :</span>
-            {ingredients.map((item, index) => {
-              return item ? <span key={index}> {item}</span> : null;
-            })}
-          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "0.3fr 1fr" }}>
+            <span className="drink-data">Name</span>
+            <p>{name}</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "0.3fr 1fr" }}>
+            <span className="drink-data">Category</span>
+            <p>{category}</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "0.3fr 1fr" }}>
+            <span className="drink-data">Info</span>
+            <p>{info}</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "0.3fr 1fr" }}>
+            <span className="drink-data">Glass </span>
+            <p>{glass}</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "0.3fr 1fr" }}>
+            <span className="drink-data">Instruction </span>
+            <p>{instructions}</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "0.3fr 1fr" }}>
+            <span className="drink-data">Ingredients </span>
+            <span>
+              {ingredients.map((item, index) => {
+                return item ? (
+                  <p className="ingredients" key={index}>
+                    {" "}
+                    {item}
+                  </p>
+                ) : null;
+              })}
+            </span>
+          </div>
         </div>
       </div>
     </section>
