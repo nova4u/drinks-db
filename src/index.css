@@ -1,14 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
 /* 
 ====== 
 Variables 
 ======
 */
 :root {
-  --primaryLightColor: #d4e6a5;
-  --primaryColor: #476a2e;
-  --primaryDarkColor: #c02c03;
+  --primaryLightColor: #f3f7e9;
+  --primaryColor: #871ab9;
+  --primaryDarkColor: #8318b4;
   --mainWhite: #fff;
-  --offWhite: #f7f7f7;
+  --offWhite: #fffbfe;
   --mainBackground: #f1f5f8;
   --mainOverlay: rgba(35, 10, 36, 0.4);
   --mainBlack: #222;
@@ -16,10 +18,10 @@ Variables
   --darkGrey: #afafaf;
   --mainRed: #bd0303;
   --mainTransition: all 0.3s linear;
-  --mainSpacing: 0.3rem;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  --mainBorderRadius: 0.25rem;
+  --mainSpacing: 0.02rem;
+  --lightShadow: 0px 12px 16px 0px rgba(58, 5, 27, 0.06);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.1);
+  --mainBorderRadius: 0.4rem;
   --smallWidth: 85vw;
   --maxWidth: 40rem;
   --fullWidth: 1170px;
@@ -36,8 +38,7 @@ Global Styles
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: var(--mainBlack);
   background: var(--mainBackground);
   line-height: 1.4;
@@ -52,7 +53,6 @@ h5,
 h6 {
   font-family: var(--slantedFont);
   margin-bottom: 1.25rem;
-  letter-spacing: var(--mainSpacing);
 }
 p {
   margin-bottom: 1.25rem;
@@ -77,16 +77,12 @@ Buttons
 .btn,
 .btn-white,
 .btn-primary {
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
-  padding: 0.45rem 0.8rem;
   display: inline-block;
-  transition: var(--mainTransition);
+  transition: all 0.5 ease-out;
   cursor: pointer;
-  font-size: 0.8rem;
-  background: transparent;
+  font-size: 1rem;
+  background: rgb(220, 181, 238);
   border-radius: var(--mainBorderRadius);
   display: inline-block;
 }
@@ -104,8 +100,9 @@ Buttons
   color: var(--primaryColor);
 }
 .btn-primary {
-  background: var(--primaryColor);
-  color: var(--mainWhite);
+  padding: 6px 18px;
+  background: rgb(235, 224, 240);
+  color: var(--primaryColor);
   border-color: transparent;
 }
 .btn-primary:hover {
@@ -120,11 +117,11 @@ Buttons
   text-align: center;
 }
 .btn-details {
-  padding: 0.25rem 0.4rem;
+  padding: 0.4rem 0.8rem;
 }
 .btn-details:hover {
-  background: var(--primaryLightColor);
-  border-color: var(--primaryLightColor);
+  background: var(--primaryColor);
+  color: rgb(235, 224, 240);
 }
 /* 
 ====== 
@@ -136,7 +133,7 @@ Navbar
   height: 5rem;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid var(--primaryColor);
+
   box-shadow: var(--lightShadow);
 }
 .nav-center {
@@ -157,8 +154,7 @@ Navbar
   font-weight: bold;
   margin-right: 0.5rem;
   font-weight: 400;
-  letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.25rem 0.5rem;
   transition: var(--mainTransition);
 }
@@ -181,7 +177,6 @@ About
 .about-section p {
   line-height: 2rem;
   font-weight: 400;
-  letter-spacing: 2px;
 }
 /* 
 ====== 
@@ -204,11 +199,11 @@ Cocktails List
 
 .section {
   padding: 5rem 0;
+  position: relative;
 }
 .section-title {
   font-size: 2rem;
   text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
   text-align: center;
   margin-bottom: 3.5rem;
   margin-top: 1rem;
@@ -243,7 +238,7 @@ Cocktail
   border-radius: var(--mainBorderRadius);
 }
 .cocktail:hover {
-  box-shadow: var(--darkShadow);
+  transform: translateY(-0.3rem);
 }
 .cocktail img {
   height: 20rem;
@@ -291,7 +286,7 @@ Form
   display: block;
   margin-bottom: 1.25rem;
   font-weight: bold;
-  letter-spacing: 0.25rem;
+
   color: var(--primaryColor);
 }
 .form-control input {
@@ -375,7 +370,7 @@ Cocktail
 .loader:after {
   position: absolute;
   top: 0;
-  content: '';
+  content: "";
 }
 .loader:before {
   left: -1.5em;
@@ -408,4 +403,29 @@ Cocktail
     box-shadow: 0 -2em;
     height: 5em;
   }
+}
+
+.scroll-to-top {
+  border-radius: 100%;
+  background: rgb(207, 123, 203);
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  right: 3%;
+  bottom: 5%;
+  box-shadow: 0px 16px 18px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  transition: var(--mainTransition);
+  z-index: 10;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5%);
+}
+
+.scroll-to-top svg {
+  margin: auto auto;
+  color: white;
 }

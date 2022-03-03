@@ -16,7 +16,6 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchValue.current.value = "";
   };
 
   return (
